@@ -18,3 +18,15 @@
         permanent: true
         state: enabled
         immediate: true
+
+- name: copy index.html to web server 
+  hosts: servera.test.com
+  tasks: 
+    - name: cp index.html
+      copy:
+        src: ./index.html
+        dest: /var/www/html/index.html
+        mode: '0644'
+
+        
+
