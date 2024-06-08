@@ -6,3 +6,15 @@
       dnf:
         name: httpd
         state: latest
+
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+    - name: permit traffic in default zone for http service
+      ansible.posix.firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: true
