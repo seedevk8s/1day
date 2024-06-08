@@ -1,0 +1,8 @@
+---
+- name: install web server
+  hosts: web
+  tasks:
+    - name: install httpd
+      dnf:
+        name: httpd
+        state: latest
