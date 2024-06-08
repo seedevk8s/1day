@@ -20,7 +20,7 @@
         immediate: true
 
 - name: copy index.html to web server 
-  hosts: servera.test.com
+  hosts: web
   tasks: 
     - name: cp index.html
       copy:
@@ -28,5 +28,12 @@
         dest: /var/www/html/index.html
         mode: '0644'
 
-        
+- name : check web server 
+  hosts: localhost
+  tasks:
+    - name: check web page 
+      uri: 
+        url: http://192.168.137.11
+        status_code: 200
+        return_content: true
 
