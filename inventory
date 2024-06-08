@@ -1,0 +1,15 @@
+192.168.137.[20:23]
+
+[web]
+servera.test.com
+serverb.test.com
+
+[db]
+serverc.test.com
+
+[time]
+serverd.test.com
+
+[webndb:children]
+web
+db

@@ -1,0 +1,10 @@
+---
+- name: my first playbook
+  hosts: web
+  tasks: 
+    - name: create user
+      user: 
+        name: docker
+        uid: 1414
+        group: wheel
+        state: present
